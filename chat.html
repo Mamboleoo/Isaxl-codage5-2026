@@ -43,6 +43,7 @@
 		})
 
 		function submitForm() {
+			console.log("submit")
 			let text = document.querySelector(".message").value;
 			let username = document.querySelector(".username").value;
 			console.log(text);
@@ -52,6 +53,8 @@
 					"Content-Type" : "application/x-www-form-urlencoded"
 				},
 				body: "cle=ABCD123&username=" + username + "&texte=" + text
+			}).then(function () {
+				location.reload();
 			});
 		}
 	</script>
