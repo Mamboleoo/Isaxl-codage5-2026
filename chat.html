@@ -6,9 +6,11 @@
 	<title>Chat en ligne</title>
 </head>
 <body>
-	
+
 	<form action="#">
-		<input type="text">
+		Username : <input type="text" class="username">
+		<br>
+		Message : <input type="text" class="message">
 		<button>Envoyer !</button>
 	</form>
 
@@ -41,14 +43,15 @@
 		})
 
 		function submitForm() {
-			let text = document.querySelector("input").value;
+			let text = document.querySelector(".message").value;
+			let username = document.querySelector(".username").value;
 			console.log(text);
 			fetch("https://isaxl.mamboleoo.be/APIS/post_message.php", {
 				method: "POST",
 				headers : {
 					"Content-Type" : "application/x-www-form-urlencoded"
 				},
-				body: "cle=ABCD123&texte=" + text
+				body: "cle=ABCD123&username=" + username + "&texte=" + text
 			});
 		}
 	</script>
